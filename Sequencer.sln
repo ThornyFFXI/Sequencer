@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sequencer", "Sequencer.vcxproj", "{003D8A4C-9C2A-48E3-A598-EFE94B0D2DA8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{003D8A4C-9C2A-48E3-A598-EFE94B0D2DA8}.Debug|x86.ActiveCfg = Debug|Win32
+		{003D8A4C-9C2A-48E3-A598-EFE94B0D2DA8}.Debug|x86.Build.0 = Debug|Win32
+		{003D8A4C-9C2A-48E3-A598-EFE94B0D2DA8}.Release|x86.ActiveCfg = Release|Win32
+		{003D8A4C-9C2A-48E3-A598-EFE94B0D2DA8}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6CD3D6D6-4918-446A-A697-B6435E1FBFF9}
+	EndGlobalSection
+EndGlobal
