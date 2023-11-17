@@ -81,7 +81,7 @@ void Sequencer::PreProcess(bool outgoing, uint32_t size, uint8_t* data)
         auto psize = (uint32_t)(*(uint16_t*)packet >> 0x09) * 0x04;
 
         // Detect action packets in the initial game-provided chunks.
-        if (pid == 0x1A)
+        if ((pid == 0x1A) || (pid == 0x37))
             mActiveSequence = *((uint16_t*)(packet + 2));
 
         offset += psize;
@@ -101,7 +101,7 @@ void Sequencer::PostProcess(bool outgoing, uint32_t size, uint8_t* data)
         auto psize = (uint32_t)(*(uint16_t*)packet >> 0x09) * 0x04;
 
         // Detect action and equip packets in the post-ashita chunks.
-        if ((pid == 0x1A) || (pid == 0x50) || (pid == 0x51))
+        if ((pid == 0x1A) || (pid == 0x37) || (pid == 0x50) || (pid == 0x51))
         {
             #ifdef DEBUG_MODE
             auto sequence = *((uint16_t*)(packet + 2));
