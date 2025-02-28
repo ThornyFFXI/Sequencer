@@ -1,5 +1,12 @@
 # Sequencer - TLDR
-This stops some extra server hassle and prevents some double messages ('Unable to cast spells at this time.', 'You must wait longer to use that ability.', etc).  It is safe for use with all versions of Ashitacast, LuAshitacast, and LegacyAC on Ashita4.  It is recommended that you use it if you use any of these systems, even if you do not understand what it's doing.<br><br>
+This stops some extra server hassle and prevents some double messages ('Unable to cast spells at this time.', 'You must wait longer to use that ability.', etc).  It is safe for use with all versions of Ashitacast, LuAshitacast, and LegacyAC on Ashita4.  It is recommended that you use it if you use any of these systems, even if you do not understand what it's doing.<br>
+
+# Installation
+Do not download the entire repository as a zip unless you plan to compile the plugin yourself. That will not provide the files you need.<br>
+
+1. Download the plugin release zip that matches your ashita installation's interface version from the releases area on the right side.
+2. Extract the entire zip to your ashita folder(the folder containing ashita.dll and ashita-cli.exe). Everything will fall into place.
+3. Load with '/load sequencer' or add the same line to your startup script. Sequencer is a plugin not an addon, so do not use '/addon load'.
 
 ## The Problem
 Every packet/instruction sent from the FFXI client comes with a sequence ID, to indicate whether it's been sent already.  Because users cannot be expected to track these at all times, Ashita automatically patches all sequence IDs of injected packets to match the first packet in the chunk.  This is safe and guarantees nobody will desync with the server.  But, when the client has to resend an existing packet, it will have a lower sequence ID than the first packet.  This means that in laggy situations, if your actions do not arrive in time, they get resent.  Because AC/LAC need to block the real packet and inject a new packet to get your swaps in before it, sequence IDs will all be modified by Ashita.  This causes the resend to evaluate independantly on the server, and count as a second copy of the same action, instead of having the server rightfully realize that it was already sent and processed.<br><br>
