@@ -27,6 +27,11 @@ __declspec(dllexport) IPlugin* __stdcall expCreatePlugin(const char* args)
     return (IPlugin*)(new Sequencer());
 }
 
+__declspec(dllexport) void __stdcall expDestroyPlugin(void* instance)
+{
+    delete static_cast<Sequencer*>(instance);
+}
+
 __declspec(dllexport) double __stdcall expGetInterfaceVersion(void)
 {
     return ASHITA_INTERFACE_VERSION;

@@ -1,4 +1,5 @@
 LIBRARY "Sequencer"
 EXPORTS
 	expCreatePlugin
+	expDestroyPlugin
 	expGetInterfaceVersion
